@@ -28,6 +28,7 @@
     html{scroll-behavior:smooth}
     body{margin:0;background:var(--ink);color:#f8f8f5;font-family:var(--font);font-size:15px;line-height:1.8}
     button{font:inherit;cursor:pointer}
+    button:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
     .shell{width:min(100%,760px);margin:auto;padding:18px 16px 42px}
     .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:2px 0 26px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.4px}
@@ -76,7 +77,7 @@
     .why-card{position:relative;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:23px;padding:18px;background:linear-gradient(145deg,#202630 0%,#181c24 78%);isolation:isolate}
     .why-software{grid-column:1/-1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:20px;min-height:218px}
     .why-card:before{content:"";position:absolute;z-index:-1;width:190px;height:190px;left:-95px;bottom:-115px;border:1px solid rgba(91,124,255,.18);border-radius:50%;box-shadow:0 0 0 18px rgba(91,124,255,.035),0 0 0 38px rgba(91,124,255,.025)}
-    .why-index{font-size:9px;letter-spacing:1.1px;color:var(--lime);font-weight:900;margin-bottom:7px}
+    .why-index{direction:ltr;text-align:right;unicode-bidi:isolate;font-size:9px;letter-spacing:1.1px;color:var(--lime);font-weight:900;margin-bottom:7px}
     .why-card h3{font-size:16px;line-height:1.55;margin:0 0 7px;font-weight:950}
     .why-card p{font-size:11px;line-height:1.95;color:#bdc3ce;margin:0}
     .why-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}
@@ -196,7 +197,7 @@
           <li><span class="check">✓</span><span>تمام خدمات طرح سیلور</span></li>
           <li><span class="check">✓</span><span>آزمون اختصاصی</span></li>
           <li><span class="check">✓</span><span>دسترسی به آرشیو وانت</span></li>
-          <li><span class="check">✓</span><span>دوره‌های آموزشی شخصی سازی شده</span></li>
+          <li><span class="check">✓</span><span>دوره‌های آموزشی شخصی‌سازی‌شده</span></li>
         </ul>
         <button class="plan-btn" data-plan="gold">انتخاب طرح گلد</button>
       </article>
@@ -223,7 +224,7 @@
             </div>
           </div>
           <div class="dashboard-demo" role="img" aria-label="نمای نمونه‌ای از گزارش روزانه نرم‌افزار وانت">
-            <div class="dash-top"><span class="dash-brand-dot"></span><b>گزارش کار روزانه</b><span>Vanet Group</span></div>
+            <div class="dash-top"><span class="dash-brand-dot"></span><b>گزارش کار روزانه</b><span dir="ltr">VANET GROUP</span></div>
             <div class="dash-main"><strong>بررسی وضعیت</strong><span class="dash-status">گزارش روزانه</span></div>
             <div class="dash-metrics">
               <div><small>زمان مطالعه</small><b>۱۰ ساعت</b></div>
@@ -297,16 +298,12 @@
       'use strict';
       const plans = {
         silver: {
-          name: 'Silver',
           label: 'سیلور',
-          price: '۱٬۵۰۰٬۰۰۰ تومان در ماه',
-          features: ['مشاوره اختصاصی', 'دریافت روزانه گزارش کار از طریق نرم‌افزار وانت', 'برنامه هفتگی', 'رفع اشکال']
+          price: '۱٬۵۰۰٬۰۰۰ تومان در ماه'
         },
         gold: {
-          name: 'Gold',
           label: 'گلد',
-          price: '۲٬۰۰۰٬۰۰۰ تومان در ماه',
-          features: ['تمام امکانات سیلور', 'آزمون', 'دسترسی به آرشیو وانت', 'دوره‌های آموزشی اختصاصی وانت']
+          price: '۲٬۰۰۰٬۰۰۰ تومان در ماه'
         }
       };
       const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
