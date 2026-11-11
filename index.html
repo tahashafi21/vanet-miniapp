@@ -66,21 +66,69 @@
     .plan-btn{margin-top:auto;width:100%;border:0;border-radius:13px;padding:11px 8px;font-size:12px;font-weight:900;background:#30394a;color:white;transition:filter .15s,transform .15s}
     .gold .plan-btn{background:var(--lime);color:#15180f}
     .plan-btn:active,.primary:active{transform:scale(.98)}
-    .shared{margin-top:14px;padding:16px;border-radius:22px;background:var(--paper);color:#17191d}
-    .shared-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:11px}
-    .shared h3{font-size:14px;margin:0;font-weight:950}
-    .shared-head span{font-size:10px;color:#747982}
-    .shared-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
-    .shared-item{background:#ebe9e1;border-radius:13px;padding:11px;min-height:74px}
-    .shared-item b{display:block;font-size:11px;margin-bottom:3px}
-    .shared-item span{font-size:10px;color:#636873;line-height:1.6;display:block}
-    .gold-extra{margin-top:13px;border:1px dashed rgba(223,255,42,.42);border-radius:20px;padding:14px;background:rgba(223,255,42,.045)}
-    .gold-extra h3{font-size:13px;margin:0 0 10px;color:var(--lime)}
-    .extra-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.08)}
-    .extra-row:first-of-type{border-top:0}
-    .extra-icon{width:29px;height:29px;border-radius:10px;background:rgba(223,255,42,.13);display:grid;place-items:center;color:var(--lime);flex:0 0 29px}
-    .extra-row b{display:block;font-size:11px}
-    .extra-row span{display:block;font-size:10px;color:#b7bdc7}
+    .why-section{margin-top:29px}
+    .why-heading{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 2px 14px}
+    .why-kicker{display:flex;align-items:center;gap:7px;color:var(--lime);font-size:10px;font-weight:850;margin-bottom:4px}
+    .why-kicker:before{content:"";width:7px;height:7px;background:var(--lime);border-radius:2px;transform:rotate(45deg)}
+    .why-heading h2{font-size:25px;line-height:1.4;letter-spacing:-.6px;margin:0;font-weight:950}
+    .why-heading p{font-size:11px;color:var(--muted);margin:3px 0 0;max-width:440px}
+    .why-heading-mark{font-size:31px;font-weight:950;letter-spacing:-3px;color:rgba(223,255,42,.2);line-height:1;padding:0 5px 5px}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .why-card{position:relative;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:23px;padding:18px;background:linear-gradient(145deg,#202630 0%,#181c24 78%);isolation:isolate}
+    .why-software{grid-column:1/-1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:20px;min-height:218px}
+    .why-card:before{content:"";position:absolute;z-index:-1;width:190px;height:190px;left:-95px;bottom:-115px;border:1px solid rgba(91,124,255,.18);border-radius:50%;box-shadow:0 0 0 18px rgba(91,124,255,.035),0 0 0 38px rgba(91,124,255,.025)}
+    .why-index{font-size:9px;letter-spacing:1.1px;color:var(--lime);font-weight:900;margin-bottom:7px}
+    .why-card h3{font-size:16px;line-height:1.55;margin:0 0 7px;font-weight:950}
+    .why-card p{font-size:11px;line-height:1.95;color:#bdc3ce;margin:0}
+    .why-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}
+    .why-tags span{font-size:9px;color:#e2e6ed;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.035);padding:4px 8px;border-radius:999px}
+    .dashboard-demo{background:#11161e;border:1px solid rgba(255,255,255,.1);border-radius:17px;padding:12px;box-shadow:0 14px 28px rgba(0,0,0,.22);transform:rotate(-1deg)}
+    .dash-top{display:flex;align-items:center;gap:6px;color:#aeb6c3;font-size:8px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:8px}
+    .dash-brand-dot{width:7px;height:7px;border-radius:2px;background:var(--lime);display:inline-block}
+    .dash-top b{font-size:9px;color:#f4f5f2;margin-left:auto}
+    .dash-main{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:10px 0}
+    .dash-main strong{font-size:11px}
+    .dash-status{font-size:8px;color:var(--lime);background:rgba(223,255,42,.1);padding:3px 6px;border-radius:6px}
+    .dash-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+    .dash-metrics div{background:#202733;border-radius:9px;padding:8px 6px;min-width:0}
+    .dash-metrics small{display:block;color:#9da6b4;font-size:7px;white-space:nowrap}
+    .dash-metrics b{display:block;color:#f1f3f5;font-size:10px;margin-top:3px}
+    .dash-progress{height:5px;border-radius:99px;background:#303846;margin-top:10px;overflow:hidden}
+    .dash-progress span{display:block;width:68%;height:100%;background:linear-gradient(90deg,#8ea2ff,var(--lime));border-radius:99px}
+    .why-gold{grid-column:1/-1;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:18px;border:1px solid rgba(221,190,104,.7);background:linear-gradient(120deg,rgba(179,145,61,.13),rgba(30,31,29,.95) 62%);box-shadow:inset 0 0 0 1px rgba(221,190,104,.10)}
+    .why-gold:before{width:240px;height:240px;left:-120px;bottom:-145px;border-color:rgba(221,190,104,.25);box-shadow:0 0 0 18px rgba(221,190,104,.035),0 0 0 38px rgba(221,190,104,.025)}
+    .gold-badge{display:inline-flex;align-items:center;gap:6px;color:#f0d58e;border:1px solid rgba(221,190,104,.48);background:rgba(221,190,104,.1);border-radius:999px;padding:4px 9px;font-size:9px;font-weight:900;margin-bottom:9px}
+    .gold-badge:before{content:"✦";font-size:11px}
+    .why-gold .why-index{color:#e6c979}
+    .why-gold h3{font-size:17px}
+    .why-gold .why-tags span{border-color:rgba(221,190,104,.28);color:#f0dfb6;background:rgba(221,190,104,.06)}
+    .course-path{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;align-items:stretch}
+    .course-step{min-width:0;border:1px solid rgba(221,190,104,.3);border-radius:12px;background:rgba(12,15,19,.35);padding:11px 7px;text-align:center}
+    .course-step b{display:block;color:#f0d58e;font-size:10px}
+    .course-step span{display:block;color:#c3bba4;font-size:8px;margin-top:4px;line-height:1.5}
+    .course-result{grid-column:1/-1;text-align:center;color:#e6ce91;font-size:9px;font-weight:850;padding-top:2px}
+    .why-compact{min-height:176px}
+    .compact-art{height:65px;display:flex;align-items:center;gap:8px;margin-top:12px}
+    .anon-art{position:relative;flex:1;display:flex;align-items:center;gap:8px}
+    .anon-lock{width:48px;height:48px;border-radius:15px;background:rgba(91,124,255,.14);color:#aabaff;display:grid;place-items:center;font-size:23px}
+    .anon-message{border:1px solid rgba(255,255,255,.12);background:#111720;border-radius:12px 12px 12px 3px;padding:7px 10px;color:#cbd2de;font-size:9px}
+    .anon-message small{display:block;color:var(--lime);font-size:7px}
+    .boarding-art{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}
+    .boarding-bubbles{display:flex;align-items:center}
+    .boarding-bubbles span{width:32px;height:32px;border-radius:11px;border:2px solid #1c222b;background:#303b4d;color:#d8e0ff;display:grid;place-items:center;font-size:13px;margin-left:-7px}
+    .boarding-bubbles span:nth-child(2){background:rgba(223,255,42,.16);color:var(--lime)}
+    .boarding-score{border:1px solid rgba(223,255,42,.25);background:rgba(223,255,42,.07);border-radius:10px;padding:5px 8px;color:var(--lime);font-size:8px;font-weight:800}
+    .why-compact .why-tags{margin-top:9px}
+    @media(min-width:620px){
+      .why-section{margin-top:34px}.why-card{padding:21px}.why-software{min-height:230px}.why-heading h2{font-size:28px}
+      .why-card h3{font-size:17px}.why-card p{font-size:12px}
+    }
+    @media(max-width:619px){
+      .why-grid{grid-template-columns:1fr;gap:10px}.why-software,.why-gold{grid-column:auto;grid-template-columns:1fr;gap:15px}
+      .why-software{min-height:0}.why-gold{min-height:0}.dashboard-demo{max-width:100%;transform:none}
+      .why-heading h2{font-size:23px}.why-heading-mark{font-size:26px}.why-compact{min-height:0}
+      .course-path{max-width:100%}
+    }
     .closing{margin-top:15px;border-radius:22px;background:var(--blue);padding:17px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;overflow:hidden}
     .closing:after{content:"✳";position:absolute;left:12px;top:-24px;font-size:92px;color:rgba(255,255,255,.12)}
     .closing b{display:block;font-size:15px;position:relative;z-index:1}
@@ -158,21 +206,73 @@
       </article>
     </section>
 
-    <section class="shared">
-      <div class="shared-head"><h3>پایه‌ی هر دو طرح</h3><span>در هر دو همراهته</span></div>
-      <div class="shared-grid">
-        <div class="shared-item"><b>مشاوره اختصاصی</b><span>ارتباط و راهنمایی متناسب با شرایط دانش‌آموز</span></div>
-        <div class="shared-item"><b>گزارش کار روزانه</b><span>ثبت و دریافت گزارش از طریق نرم‌افزار وانت</span></div>
-        <div class="shared-item"><b>برنامه هفتگی</b><span>مسیر مطالعه‌ی منظم و قابل پیگیری</span></div>
-        <div class="shared-item"><b>رفع اشکال</b><span>همراهی برای برطرف‌کردن ابهام‌ها و مشکلات درسی</span></div>
+    <section class="why-section" aria-labelledby="why-title">
+      <div class="why-heading">
+        <div>
+          <div class="why-kicker">چیزی فراتر از یک برنامه درسی</div>
+          <h2 id="why-title">چرا وانت؟</h2>
+          <p>چهار امکان برای اینکه مسیر درس‌خواندن، دقیق‌تر، همراه‌تر و پربازده‌تر پیش بره.</p>
+        </div>
+        <div class="why-heading-mark" aria-hidden="true">V.</div>
       </div>
-    </section>
 
-    <section class="gold-extra">
-      <h3>در گلد، یک لایه بیشتر</h3>
-      <div class="extra-row"><div class="extra-icon">◉</div><div><b>آزمون</b><span>برای سنجش روند یادگیری و ارزیابی عملکرد</span></div></div>
-      <div class="extra-row"><div class="extra-icon">▤</div><div><b>آرشیو وانت</b><span>دسترسی به محتوای آموزشی آرشیوشده‌ی گروه</span></div></div>
-      <div class="extra-row"><div class="extra-icon">✳</div><div><b>دوره‌های اختصاصی وانت</b><span>دوره‌های طراحی‌شده با رویکرد و امضای آموزشی خود وانت</span></div></div>
+      <div class="why-grid">
+        <article class="why-card why-software">
+          <div>
+            <div class="why-index">01 / DAILY TRACKING</div>
+            <h3>نرم‌افزار گزارش کار وانت</h3>
+            <p>گزارش روزانه فقط به ساعت مطالعه و تعداد تست محدود نیست. ساعت بیداری و حال‌وهوای دانش‌آموز هم ثبت می‌شه تا مشاور، تصویر کامل‌تری از شرایط و روند روزانه داشته باشه.</p>
+            <div class="why-tags">
+              <span>ساعت مطالعه</span><span>تعداد تست</span><span>ساعت بیداری</span><span>وضعیت احساسی</span>
+            </div>
+          </div>
+          <div class="dashboard-demo" aria-label="نمایی گرافیکی از گزارش روزانه نرم‌افزار وانت">
+            <div class="dash-top"><span class="dash-brand-dot"></span><b>گزارش امروز</b><span>VANET APP</span></div>
+            <div class="dash-main"><strong>بررسی وضعیت روزانه</strong><span class="dash-status">گزارش روزانه</span></div>
+            <div class="dash-metrics">
+              <div><small>زمان مطالعه</small><b>مطالعه</b></div>
+              <div><small>زمان بیداری</small><b>بیداری</b></div>
+              <div><small>حال امروز</small><b>احساسات</b></div>
+            </div>
+            <div class="dash-progress"><span></span></div>
+          </div>
+        </article>
+
+        <article class="why-card why-gold">
+          <div>
+            <div class="gold-badge">ویژه طرح گلد</div>
+            <div class="why-index">02 / PERSONALIZED LEARNING</div>
+            <h3>دوره‌های آموزشی شخصی‌سازی‌شده</h3>
+            <p>با شناخت نقاط قوت و ضعف هر دانش‌آموز، دوره‌های سالیانه، نکته‌وتست و امتحان نهایی از اساتید مطرح رو متناسب با نیازش کنار هم می‌چینیم؛ تا به یک مسیر آموزشی بهینه و پربازده برسیم.</p>
+          </div>
+          <div class="course-path" aria-label="مراحل ساخت مسیر آموزشی اختصاصی">
+            <div class="course-step"><b>شناخت</b><span>نقاط قوت و ضعف</span></div>
+            <div class="course-step"><b>ترکیب</b><span>دوره‌های متناسب</span></div>
+            <div class="course-step"><b>مسیر تو</b><span>آموزش هدفمند</span></div>
+            <div class="course-result">یک مسیر آموزشی متناسب با نیاز تو</div>
+          </div>
+        </article>
+
+        <article class="why-card why-compact">
+          <div class="why-index">03 / ANONYMOUS BOT</div>
+          <h3>ربات ناشناس وانت</h3>
+          <p>سؤال، دغدغه، انتقاد یا پیشنهادت رو بدون نمایش هویتت برای تیم وانت بفرست؛ راحت‌تر حرفت رو بزن.</p>
+          <div class="compact-art anon-art" aria-hidden="true">
+            <div class="anon-lock">♢</div>
+            <div class="anon-message"><small>پیام ناشناس</small>حرفت شنیده می‌شه.</div>
+          </div>
+        </article>
+
+        <article class="why-card why-compact">
+          <div class="why-index">04 / VANET ONLINE STUDY ROOM</div>
+          <h3>پانسیون آنلاین گروه آموزشی وانت</h3>
+          <p>سؤال‌هات رو بپرس، از بقیه یاد بگیر و در کنار دانش‌آموزهای دیگه وارد یک رقابت سالم و انگیزه‌بخش شو.</p>
+          <div class="boarding-art" aria-hidden="true">
+            <div class="boarding-bubbles"><span>؟</span><span>✓</span><span>✦</span></div>
+            <div class="boarding-score">یادگیری + رقابت</div>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="closing">
