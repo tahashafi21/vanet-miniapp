@@ -331,7 +331,7 @@
       }
       function requestText() {
         const p = plans[selected];
-        return `سلام، وقت بخیر.\nبرای ثبت‌نام و خرید طرح ${p.label} مشاوره گروه آموزشی وانت پیام می‌دم.\nهزینه این طرح: ${p.price}\nلطفاً برای مراحل ثبت‌نام و شروع مشاوره راهنمایی‌ام کنید.\n\nاز طریق مینی‌اپ گروه آموزشی وانت`;
+        return `سلام 👋\nبرای ثبت‌نام طرح ${p.label} وانت پیام می‌دم.\n💳 هزینه: ${p.price}\nلطفاً راهنمایی‌ام کنید. 🙏`;
       }
       function submitChoice() {
         const supportUrl = 'https://t.me/AdVanet?text=' + encodeURIComponent(requestText());
