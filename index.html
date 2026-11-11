@@ -54,7 +54,6 @@
     .plan-name{font-size:22px;font-weight:950;letter-spacing:.4px}
     .plan-icon{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:#303949;color:#dce4ff;font-size:20px}
     .gold .plan-icon{background:var(--lime);color:#171a12}
-    .recommend{font-size:9px;font-weight:900;background:var(--lime);color:#161a10;padding:4px 7px;border-radius:7px;position:absolute;top:0;left:0}
     .price-label{font-size:10px;color:var(--muted);margin-top:2px}
     .price{font-size:clamp(18px,4.7vw,25px);font-weight:950;white-space:nowrap;letter-spacing:-.5px;line-height:1.5;margin:1px 0 2px}
     .price small{font-size:11px;font-weight:700;color:#d0d4dc}
@@ -89,8 +88,8 @@
     .dash-main{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:10px 0}
     .dash-main strong{font-size:11px}
     .dash-status{font-size:8px;color:var(--lime);background:rgba(223,255,42,.1);padding:3px 6px;border-radius:6px}
-    .dash-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-    .dash-metrics div{background:#202733;border-radius:9px;padding:8px 6px;min-width:0}
+    .dash-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+    .dash-metrics div{background:#202733;border-radius:9px;padding:8px 5px;min-width:0;text-align:center}
     .dash-metrics small{display:block;color:#9da6b4;font-size:7px;white-space:nowrap}
     .dash-metrics b{display:block;color:#f1f3f5;font-size:10px;margin-top:3px}
     .dash-progress{height:5px;border-radius:99px;background:#303846;margin-top:10px;overflow:hidden}
@@ -138,7 +137,7 @@
     .foot strong{color:#d7dbe2}
     .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.68);display:none;align-items:flex-end;justify-content:center;padding:12px;z-index:10}
     .modal-backdrop.open{display:flex}
-    .modal{width:min(100%,520px);background:#202631;border:1px solid rgba(255,255,255,.14);border-radius:25px;padding:20px;box-shadow:0 20px 80px rgba(0,0,0,.45);animation:rise .2s ease-out}
+    .modal{width:min(100%,520px);max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow-y:auto;background:#202631;border:1px solid rgba(255,255,255,.14);border-radius:25px;padding:20px;box-shadow:0 20px 80px rgba(0,0,0,.45);animation:rise .2s ease-out}
     @keyframes rise{from{transform:translateY(15px);opacity:.5}to{transform:translateY(0);opacity:1}}
     .modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
     .modal h2{font-size:19px;margin:0}
@@ -147,14 +146,11 @@
     .summary{border-radius:16px;background:#171c24;padding:13px;margin:14px 0}
     .summary-line{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:5px 0}
     .summary-line b{color:var(--lime)}
-    .modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .modal-actions{display:grid;grid-template-columns:1fr;gap:9px}
     .primary,.secondary{border:0;border-radius:13px;padding:12px 8px;font-weight:900;font-size:12px}
     .primary{background:var(--lime);color:#111318}
-    .secondary{background:#343c49;color:#f6f7f8}
-    .toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#f7f5ef;color:#15171a;border-radius:13px;padding:10px 15px;font-size:11px;font-weight:800;z-index:20;transition:all .2s;box-shadow:0 8px 30px rgba(0,0,0,.3);max-width:calc(100% - 32px);text-align:center}
-    .toast.show{opacity:1;transform:translate(-50%,0)}
     @media(min-width:620px){.shell{padding:24px 22px 50px}.hero{padding:32px 30px;min-height:250px}.plan{padding:21px 20px}.plans{gap:15px}.feature-list li{font-size:12px}.plan-desc{font-size:12px}.modal-backdrop{align-items:center}}
-    @media(max-width:370px){.shell{padding-inline:11px}.plans{gap:8px}.plan{padding:13px 11px;border-radius:19px}.plan-name{font-size:19px}.price{font-size:18px}.plan-desc{font-size:10px}.feature-list li{font-size:10px}.recommend{font-size:8px}.closing{padding:14px}.closing button{padding:10px;font-size:10px}}
+    @media(max-width:370px){.shell{padding-inline:11px}.plans{gap:8px}.plan{padding:13px 11px;border-radius:19px}.plan-name{font-size:19px}.price{font-size:18px}.plan-desc{font-size:10px}.feature-list li{font-size:10px}.recommend{font-size:8px}.closing{padding:14px}.closing button{padding:10px;font-size:10px}.price{font-size:16px}.price small{font-size:9px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
   </style>
 </head>
@@ -173,7 +169,7 @@
 
     <div class="section-head">
       <h2>طرح‌های مشاوره‌ای</h2>
-      <span></span>
+      <span>هزینه‌ها به‌صورت ماهانه</span>
     </div>
 
     <section class="plans" id="plans-anchor" aria-label="طرح‌های مشاوره‌ای">
@@ -211,7 +207,7 @@
         <div>
           <div class="why-kicker">چیزی فراتر از یک برنامه درسی</div>
           <h2 id="why-title">چرا وانت؟</h2>
-          <p>چهار مزیت که وانت رو نسبت به بقیه متمایز میکنه.</p>
+          <p>چهار امکان برای اینکه مسیر درس‌خوندن، دقیق‌تر، همراه‌تر و متناسب‌تر پیش بره.</p>
         </div>
         <div class="why-heading-mark" aria-hidden="true">V.</div>
       </div>
@@ -219,20 +215,21 @@
       <div class="why-grid">
         <article class="why-card why-software">
           <div>
-            <div class="why-index">01 / Daily Tracking</div>
+            <div class="why-index">01 / DAILY TRACKING</div>
             <h3>نرم‌افزار گزارش کار وانت</h3>
-            <p>گزارش روزانه فقط به ساعت مطالعه و تعداد تست محدود نیست. ساعت بیداری و حال‌وهوای دانش‌آموز هم ثبت می‌شه تا مشاور، تصویر کامل‌تری از شرایط و روند روزانه دانش آموزش داشته باشه.</p>
+            <p>گزارش روزانه فقط به ساعت مطالعه و تعداد تست محدود نیست. ساعت بیداری و حال‌وهوای دانش‌آموز هم ثبت می‌شه تا مشاور تصویر کامل‌تری از شرایط و روند روزانه‌اش داشته باشه.</p>
             <div class="why-tags">
-              <span>ساعت مطالعه</span><span>تعداد تست</span><span>ساعت بیداری</span><span>میزان رضایت</span>
+              <span>ساعت مطالعه</span><span>تعداد تست</span><span>ساعت بیداری</span><span>وضعیت احساسی</span>
             </div>
           </div>
-          <div class="dashboard-demo" aria-label="نمایی گرافیکی از گزارش روزانه نرم‌افزار وانت">
+          <div class="dashboard-demo" role="img" aria-label="نمای نمونه‌ای از گزارش روزانه نرم‌افزار وانت">
             <div class="dash-top"><span class="dash-brand-dot"></span><b>گزارش کار روزانه</b><span>Vanet Group</span></div>
             <div class="dash-main"><strong>بررسی وضعیت</strong><span class="dash-status">گزارش روزانه</span></div>
             <div class="dash-metrics">
-              <div><small>زمان مطالعه</small><b>ده ساعت</b></div>
-              <div><small>زمان بیداری</small><b>شش صبح</b></div>
-              <div><small>حال امروز</small><b>خوشحال</b></div>
+              <div><small>زمان مطالعه</small><b>۱۰ ساعت</b></div>
+              <div><small>تعداد تست</small><b>۱۲۰ تست</b></div>
+              <div><small>زمان بیداری</small><b>۶ صبح</b></div>
+              <div><small>حال امروز</small><b>خوب</b></div>
             </div>
             <div class="dash-progress"><span></span></div>
           </div>
@@ -241,22 +238,22 @@
         <article class="why-card why-gold">
           <div>
             <div class="gold-badge">ویژه طرح گلد</div>
-            <div class="why-index">02 / Personalized Learning</div>
-            <h3>دوره‌های آموزشی شخصی‌سازی‌ شده</h3>
-            <p>با شناخت نقاط قوت و ضعف هر دانش‌آموز، دوره‌های سالیانه، نکته‌وتست، امتحان نهایی و... از اساتید مطرح رو متناسب با نیازش کنار هم می‌چینیم؛ تا به یک مسیر آموزشی بهینه و پربازده برسیم.</p>
+            <div class="why-index">02 / PERSONALIZED LEARNING</div>
+            <h3>دوره‌های آموزشی شخصی‌سازی‌شده</h3>
+            <p>با شناخت نقاط قوت و ضعف هر دانش‌آموز، دوره‌های سالیانه، نکته‌وتست و امتحان نهاییِ اساتید مطرح رو متناسب با نیازش انتخاب و ترکیب می‌کنیم تا به یک مسیر آموزشی بهینه و پربازده برسیم.</p>
           </div>
           <div class="course-path" aria-label="مراحل ساخت مسیر آموزشی اختصاصی">
-            <div class="course-step"><b>کاملا شخصی</b><span></span>برگرفته از ویژگی های خودت</span></div>
-            <div class="course-step"><b>دریافت سریع</b><span>بدون قفل و دردسر ربات</span></div>
-            <div class="course-step"><b>همیشه آماده</b><span>حتی در زمان قطعی اینترنت</span></div>
-            <div class="course-result">تنظیم دوره بوسیله مشاور شخصی انجام میشود</div>
+            <div class="course-step"><b>شناخت</b><span>نقاط قوت و ضعف</span></div>
+            <div class="course-step"><b>انتخاب</b><span>دوره‌های مناسب</span></div>
+            <div class="course-step"><b>ترکیب</b><span>سالیانه، نکته‌وتست و نهایی</span></div>
+            <div class="course-result">مسیر آموزشی اختصاصی با همراهی مشاور</div>
           </div>
         </article>
 
         <article class="why-card why-compact">
-          <div class="why-index">03 / Ananymous Bot</div>
+          <div class="why-index">03 / ANONYMOUS BOT</div>
           <h3>ربات ناشناس وانت</h3>
-          <p>سؤال، دغدغه، انتقاد یا پیشنهادت رو بدون نمایش هویتت برای تیم وانت بفرست و راحت‌تر حرفت رو بزن.</p>
+          <p>سؤال، دغدغه، انتقاد یا پیشنهادت رو بدون نمایش هویتت برای تیم وانت بفرست؛ راحت‌تر و بی‌واسطه حرفت رو بزن.</p>
           <div class="compact-art anon-art" aria-hidden="true">
             <div class="anon-lock">♢</div>
             <div class="anon-message"><small>پیام ناشناس</small>حرفت شنیده می‌شه.</div>
@@ -264,7 +261,7 @@
         </article>
 
         <article class="why-card why-compact">
-          <div class="why-index">04 / Vanet Online Study Room</div>
+          <div class="why-index">04 / ONLINE STUDY ROOM</div>
           <h3>پانسیون آنلاین گروه آموزشی وانت</h3>
           <p>سؤال‌هات رو بپرس، از بقیه یاد بگیر و در کنار دانش‌آموزهای دیگه وارد یک رقابت سالم و انگیزه‌بخش شو.</p>
           <div class="boarding-art" aria-hidden="true">
@@ -315,17 +312,24 @@
       const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
       const modal = document.getElementById('modal-backdrop');
       let selected = 'gold';
+      let lastTrigger = null;
+      function closeModal() {
+        modal.classList.remove('open');
+        if (lastTrigger) lastTrigger.focus();
+      }
       function haptic() {
         try { if (tg && tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light'); } catch (_) {}
       }
-      function choose(planKey) {
+      function choose(planKey, trigger) {
         if (!plans[planKey]) return;
+        lastTrigger = trigger || null;
         selected = planKey;
         document.querySelectorAll('.plan').forEach(el => el.classList.remove('selected'));
         document.getElementById(planKey + '-card').classList.add('selected');
         document.getElementById('selected-name').textContent = plans[planKey].label;
         document.getElementById('selected-price').textContent = plans[planKey].price;
         modal.classList.add('open');
+        document.getElementById('confirm-choice').focus();
         haptic();
       }
       function requestText() {
@@ -341,13 +345,16 @@
         window.location.href = supportUrl;
       }
       document.querySelectorAll('[data-plan]').forEach(button => {
-        button.addEventListener('click', () => choose(button.dataset.plan));
+        button.addEventListener('click', () => choose(button.dataset.plan, button));
       });
       document.getElementById('compare-cta').addEventListener('click', () => {
         document.getElementById('plans-anchor')?.scrollIntoView({behavior:'smooth', block:'center'});
       });
-      document.getElementById('close-modal').addEventListener('click', () => modal.classList.remove('open'));
-      modal.addEventListener('click', event => { if (event.target === modal) modal.classList.remove('open'); });
+      document.getElementById('close-modal').addEventListener('click', closeModal);
+      modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
       document.getElementById('confirm-choice').addEventListener('click', submitChoice);
       if (tg) {
         try { tg.ready(); tg.expand(); } catch (_) {}
