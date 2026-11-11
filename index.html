@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111318">
+  <meta name="description" content="معرفی طرح‌های مشاوره‌ای گروه آموزشی وانت؛ سیلور و گلد">
+  <title>طرح‌های مشاوره‌ای | گروه آموزشی وانت</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.min.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink:#111318;
+      --panel:#191d25;
+      --panel-2:#222833;
+      --paper:#f7f5ef;
+      --muted:#a9afba;
+      --blue:#5b7cff;
+      --lime:#dfff2a;
+      --red:#ff4d4d;
+      --line:rgba(255,255,255,.11);
+      --radius:22px;
+      --font:Vazirmatn, IRANSans, "Segoe UI", Tahoma, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--ink);color:#f8f8f5;font-family:var(--font);font-size:15px;line-height:1.8}
+    button{font:inherit;cursor:pointer}
+    .shell{width:min(100%,760px);margin:auto;padding:18px 16px 42px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:2px 0 26px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.4px}
+    .brand-mark{width:48px;height:46px;object-fit:contain;display:block;flex:0 0 48px}
+    .brand small{display:block;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:1.5px;margin-top:-4px}
+    .top-tag{font-size:11px;color:#dbe1ff;border:1px solid rgba(91,124,255,.45);background:rgba(91,124,255,.12);border-radius:999px;padding:6px 10px;white-space:nowrap}
+    .hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:28px;padding:25px 22px 23px;background:linear-gradient(135deg,#202634 0%,#151922 68%);margin-bottom:14px;min-height:220px}
+    .hero:before{content:"";position:absolute;width:180px;height:180px;left:-54px;top:-54px;border:25px solid rgba(91,124,255,.18);border-radius:50%}
+    .hero:after{content:"↗";position:absolute;left:27px;bottom:3px;font-size:95px;line-height:1;color:rgba(223,255,42,.13);font-weight:900;transform:rotate(-9deg)}
+    .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:var(--lime);font-weight:800;margin-bottom:10px;position:relative;z-index:1}
+    .eyebrow:before{content:"";width:7px;height:7px;background:var(--lime);border-radius:2px;transform:rotate(45deg)}
+    h1{font-size:clamp(28px,7vw,43px);line-height:1.35;letter-spacing:-1.3px;margin:0;max-width:490px;position:relative;z-index:1;font-weight:950}
+    h1 em{font-style:normal;color:var(--lime)}
+    .hero p{color:#c0c6d0;font-size:13px;max-width:430px;margin:12px 0 0;position:relative;z-index:1}
+    .section-head{display:flex;align-items:end;justify-content:space-between;margin:26px 2px 12px;gap:10px}
+    .section-head h2{font-size:19px;margin:0;letter-spacing:-.4px}
+    .section-head span{font-size:11px;color:var(--muted)}
+    .plans{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:stretch}
+    .plan{position:relative;border-radius:24px;padding:17px 15px 15px;min-width:0;display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);background:var(--panel);transition:transform .18s,border-color .18s,box-shadow .18s}
+    .plan.selected{border-color:var(--lime);box-shadow:0 0 0 1px rgba(223,255,42,.28),0 12px 32px rgba(0,0,0,.18);transform:translateY(-2px)}
+    .plan.gold{background:linear-gradient(160deg,#33351f 0%,#1c2025 65%);border-color:rgba(223,255,42,.27)}
+    .plan.gold.selected{border-color:var(--lime)}
+    .plan-top{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:13px}
+    .plan-name{font-size:22px;font-weight:950;letter-spacing:.4px}
+    .plan-icon{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:#303949;color:#dce4ff;font-size:20px}
+    .gold .plan-icon{background:var(--lime);color:#171a12}
+    .recommend{font-size:9px;font-weight:900;background:var(--lime);color:#161a10;padding:4px 7px;border-radius:7px;position:absolute;top:0;left:0}
+    .price-label{font-size:10px;color:var(--muted);margin-top:2px}
+    .price{font-size:clamp(18px,4.7vw,25px);font-weight:950;white-space:nowrap;letter-spacing:-.5px;line-height:1.5;margin:1px 0 2px}
+    .price small{font-size:11px;font-weight:700;color:#d0d4dc}
+    .difference{font-size:10px;color:var(--lime);margin-bottom:13px;min-height:20px}
+    .plan-desc{font-size:11px;color:#d2d6de;margin:0 0 12px;min-height:48px}
+    .feature-list{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:8px}
+    .feature-list li{display:flex;align-items:flex-start;gap:7px;font-size:11px;color:#e7e9ed;line-height:1.65}
+    .check{flex:0 0 17px;width:17px;height:17px;border-radius:6px;background:rgba(91,124,255,.2);color:#aebeff;display:grid;place-items:center;font-size:11px;margin-top:1px}
+    .gold .check{background:rgba(223,255,42,.16);color:var(--lime)}
+    .plan-btn{margin-top:auto;width:100%;border:0;border-radius:13px;padding:11px 8px;font-size:12px;font-weight:900;background:#30394a;color:white;transition:filter .15s,transform .15s}
+    .gold .plan-btn{background:var(--lime);color:#15180f}
+    .plan-btn:active,.primary:active{transform:scale(.98)}
+    .shared{margin-top:14px;padding:16px;border-radius:22px;background:var(--paper);color:#17191d}
+    .shared-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:11px}
+    .shared h3{font-size:14px;margin:0;font-weight:950}
+    .shared-head span{font-size:10px;color:#747982}
+    .shared-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+    .shared-item{background:#ebe9e1;border-radius:13px;padding:11px;min-height:74px}
+    .shared-item b{display:block;font-size:11px;margin-bottom:3px}
+    .shared-item span{font-size:10px;color:#636873;line-height:1.6;display:block}
+    .gold-extra{margin-top:13px;border:1px dashed rgba(223,255,42,.42);border-radius:20px;padding:14px;background:rgba(223,255,42,.045)}
+    .gold-extra h3{font-size:13px;margin:0 0 10px;color:var(--lime)}
+    .extra-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.08)}
+    .extra-row:first-of-type{border-top:0}
+    .extra-icon{width:29px;height:29px;border-radius:10px;background:rgba(223,255,42,.13);display:grid;place-items:center;color:var(--lime);flex:0 0 29px}
+    .extra-row b{display:block;font-size:11px}
+    .extra-row span{display:block;font-size:10px;color:#b7bdc7}
+    .closing{margin-top:15px;border-radius:22px;background:var(--blue);padding:17px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;overflow:hidden}
+    .closing:after{content:"✳";position:absolute;left:12px;top:-24px;font-size:92px;color:rgba(255,255,255,.12)}
+    .closing b{display:block;font-size:15px;position:relative;z-index:1}
+    .closing span{display:block;font-size:10px;color:#e3e8ff;position:relative;z-index:1}
+    .closing button{position:relative;z-index:1;border:0;border-radius:12px;background:var(--lime);color:#111318;font-size:11px;font-weight:950;padding:11px 13px;white-space:nowrap}
+    .foot{display:flex;justify-content:space-between;gap:8px;color:#747c89;font-size:10px;margin:19px 3px 0}
+    .foot strong{color:#d7dbe2}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.68);display:none;align-items:flex-end;justify-content:center;padding:12px;z-index:10}
+    .modal-backdrop.open{display:flex}
+    .modal{width:min(100%,520px);background:#202631;border:1px solid rgba(255,255,255,.14);border-radius:25px;padding:20px;box-shadow:0 20px 80px rgba(0,0,0,.45);animation:rise .2s ease-out}
+    @keyframes rise{from{transform:translateY(15px);opacity:.5}to{transform:translateY(0);opacity:1}}
+    .modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .modal h2{font-size:19px;margin:0}
+    .close{border:0;background:#343c49;color:white;border-radius:10px;width:34px;height:34px;font-size:20px}
+    .modal p{font-size:12px;color:#c1c7d1}
+    .summary{border-radius:16px;background:#171c24;padding:13px;margin:14px 0}
+    .summary-line{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:5px 0}
+    .summary-line b{color:var(--lime)}
+    .modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .primary,.secondary{border:0;border-radius:13px;padding:12px 8px;font-weight:900;font-size:12px}
+    .primary{background:var(--lime);color:#111318}
+    .secondary{background:#343c49;color:#f6f7f8}
+    .toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#f7f5ef;color:#15171a;border-radius:13px;padding:10px 15px;font-size:11px;font-weight:800;z-index:20;transition:all .2s;box-shadow:0 8px 30px rgba(0,0,0,.3);max-width:calc(100% - 32px);text-align:center}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(min-width:620px){.shell{padding:24px 22px 50px}.hero{padding:32px 30px;min-height:250px}.plan{padding:21px 20px}.plans{gap:15px}.feature-list li{font-size:12px}.plan-desc{font-size:12px}.modal-backdrop{align-items:center}}
+    @media(max-width:370px){.shell{padding-inline:11px}.plans{gap:8px}.plan{padding:13px 11px;border-radius:19px}.plan-name{font-size:19px}.price{font-size:18px}.plan-desc{font-size:10px}.feature-list li{font-size:10px}.recommend{font-size:8px}.closing{padding:14px}.closing button{padding:10px;font-size:10px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><img class="brand-mark" src="assets/logo-vant-clean.png" alt="نشان گروه آموزشی وانت"><div>گروه آموزشی وانت<small>VANT EDUCATIONAL GROUP</small></div></div>
+      <div class="top-tag">مشاوره کنکور</div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">دو سطح همراهی، یک هدف مشترک</div>
+      <h1>مسیرت رو انتخاب کن؛<br><em>ما کنارتیم.</em></h1>
+      <p>از برنامه‌ریزی و پیگیری روزانه تا آزمون و دوره‌های اختصاصی؛ ببین کدوم مسیر با نیازت هماهنگ‌تره.</p>
+    </section>
+
+    <div class="section-head">
+      <h2>طرح‌های مشاوره‌ای</h2>
+      <span>انتخاب با توئه</span>
+    </div>
+
+    <section class="plans" id="plans-anchor" aria-label="طرح‌های مشاوره‌ای">
+      <article class="plan" id="silver-card">
+        <div class="plan-top"><div class="plan-name">SILVER</div><div class="plan-icon">↗</div></div>
+        <div class="price-label">هزینه ماهانه طرح</div>
+        <div class="price">۱٬۵۰۰٬۰۰۰ <small>تومان / ماه</small></div>
+        <div class="difference">شروع همراهی اختصاصی</div>
+        <p class="plan-desc">برای دانش‌آموزی که به برنامه منظم و پیگیری واقعی نیاز داره.</p>
+        <ul class="feature-list">
+          <li><span class="check">✓</span><span>مشاوره اختصاصی</span></li>
+          <li><span class="check">✓</span><span>دریافت روزانه گزارش کار با نرم‌افزار وانت</span></li>
+          <li><span class="check">✓</span><span>ارائه برنامه هفتگی</span></li>
+          <li><span class="check">✓</span><span>رفع اشکال و پاسخ‌گویی</span></li>
+        </ul>
+        <button class="plan-btn" data-plan="silver">انتخاب طرح سیلور</button>
+      </article>
+
+      <article class="plan gold" id="gold-card">
+        <div class="recommend">پیشنهاد کامل‌تر</div>
+        <div class="plan-top"><div class="plan-name">GOLD</div><div class="plan-icon">✦</div></div>
+        <div class="price-label">هزینه ماهانه طرح</div>
+        <div class="price">۲٬۰۰۰٬۰۰۰ <small>تومان / ماه</small></div>
+        <div class="difference">۵۰۰ هزار تومان در ماه بیشتر از سیلور</div>
+        <p class="plan-desc">همراهی کامل‌تر با ابزارها و محتوای اختصاصی وانت.</p>
+        <ul class="feature-list">
+          <li><span class="check">✓</span><span>تمام خدمات طرح سیلور</span></li>
+          <li><span class="check">✓</span><span>آزمون</span></li>
+          <li><span class="check">✓</span><span>دسترسی به آرشیو وانت</span></li>
+          <li><span class="check">✓</span><span>دوره‌های آموزشی اختصاصی وانت</span></li>
+        </ul>
+        <button class="plan-btn" data-plan="gold">انتخاب طرح گلد</button>
+      </article>
+    </section>
+
+    <section class="shared">
+      <div class="shared-head"><h3>پایه‌ی هر دو طرح</h3><span>در هر دو همراهته</span></div>
+      <div class="shared-grid">
+        <div class="shared-item"><b>مشاوره اختصاصی</b><span>ارتباط و راهنمایی متناسب با شرایط دانش‌آموز</span></div>
+        <div class="shared-item"><b>گزارش کار روزانه</b><span>ثبت و دریافت گزارش از طریق نرم‌افزار وانت</span></div>
+        <div class="shared-item"><b>برنامه هفتگی</b><span>مسیر مطالعه‌ی منظم و قابل پیگیری</span></div>
+        <div class="shared-item"><b>رفع اشکال</b><span>همراهی برای برطرف‌کردن ابهام‌ها و مشکلات درسی</span></div>
+      </div>
+    </section>
+
+    <section class="gold-extra">
+      <h3>در گلد، یک لایه بیشتر</h3>
+      <div class="extra-row"><div class="extra-icon">◉</div><div><b>آزمون</b><span>برای سنجش روند یادگیری و ارزیابی عملکرد</span></div></div>
+      <div class="extra-row"><div class="extra-icon">▤</div><div><b>آرشیو وانت</b><span>دسترسی به محتوای آموزشی آرشیوشده‌ی گروه</span></div></div>
+      <div class="extra-row"><div class="extra-icon">✳</div><div><b>دوره‌های اختصاصی وانت</b><span>دوره‌های طراحی‌شده با رویکرد و امضای آموزشی خود وانت</span></div></div>
+    </section>
+
+    <section class="closing">
+      <div><b>قدم بعدی رو بردار.</b><span>طرح مناسب خودت رو انتخاب کن.</span></div>
+      <button id="compare-cta">انتخاب طرح ←</button>
+    </section>
+
+    <footer class="foot"><strong>گروه آموزشی وانت</strong><span>مشاوره، برنامه‌ریزی، همراهی</span></footer>
+  </main>
+
+  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <section class="modal">
+      <div class="modal-head"><h2 id="modal-title">انتخابت رو نهایی کن</h2><button class="close" id="close-modal" aria-label="بستن">×</button></div>
+      <p>با ادامه، گفت‌وگوی پشتیبانی وانت با متن درخواست همین طرح باز می‌شه؛ فقط کافیه پیام رو بررسی و ارسال کنی.</p>
+      <div class="summary">
+        <div class="summary-line"><span>طرح انتخابی</span><b id="selected-name">—</b></div>
+        <div class="summary-line"><span>هزینه ماهانه</span><b id="selected-price">—</b></div>
+      </div>
+      <div class="modal-actions"><button class="primary" id="confirm-choice">رفتن به پشتیبانی وانت ↗</button></div>
+    </section>
+  </div>
+
+  <script>
+    (() => {
+      'use strict';
+      const plans = {
+        silver: {
+          name: 'Silver',
+          label: 'سیلور',
+          price: '۱٬۵۰۰٬۰۰۰ تومان در ماه',
+          features: ['مشاوره اختصاصی', 'دریافت روزانه گزارش کار از طریق نرم‌افزار وانت', 'برنامه هفتگی', 'رفع اشکال']
+        },
+        gold: {
+          name: 'Gold',
+          label: 'گلد',
+          price: '۲٬۰۰۰٬۰۰۰ تومان در ماه',
+          features: ['تمام امکانات سیلور', 'آزمون', 'دسترسی به آرشیو وانت', 'دوره‌های آموزشی اختصاصی وانت']
+        }
+      };
+      const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+      const modal = document.getElementById('modal-backdrop');
+      let selected = 'gold';
+      function haptic() {
+        try { if (tg && tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light'); } catch (_) {}
+      }
+      function choose(planKey) {
+        if (!plans[planKey]) return;
+        selected = planKey;
+        document.querySelectorAll('.plan').forEach(el => el.classList.remove('selected'));
+        document.getElementById(planKey + '-card').classList.add('selected');
+        document.getElementById('selected-name').textContent = plans[planKey].label;
+        document.getElementById('selected-price').textContent = plans[planKey].price;
+        modal.classList.add('open');
+        haptic();
+      }
+      function requestText() {
+        const p = plans[selected];
+        return `سلام، وقت بخیر.\nبرای ثبت‌نام و خرید طرح ${p.label} مشاوره گروه آموزشی وانت پیام می‌دم.\nهزینه این طرح: ${p.price}\nلطفاً برای مراحل ثبت‌نام و شروع مشاوره راهنمایی‌ام کنید.\n\nاز طریق مینی‌اپ گروه آموزشی وانت`;
+      }
+      function submitChoice() {
+        const supportUrl = 'https://t.me/AdVanet?text=' + encodeURIComponent(requestText());
+        if (tg && typeof tg.openTelegramLink === 'function') {
+          tg.openTelegramLink(supportUrl);
+          return;
+        }
+        window.location.href = supportUrl;
+      }
+      document.querySelectorAll('[data-plan]').forEach(button => {
+        button.addEventListener('click', () => choose(button.dataset.plan));
+      });
+      document.getElementById('compare-cta').addEventListener('click', () => {
+        document.getElementById('plans-anchor')?.scrollIntoView({behavior:'smooth', block:'center'});
+      });
+      document.getElementById('close-modal').addEventListener('click', () => modal.classList.remove('open'));
+      modal.addEventListener('click', event => { if (event.target === modal) modal.classList.remove('open'); });
+      document.getElementById('confirm-choice').addEventListener('click', submitChoice);
+      if (tg) {
+        try { tg.ready(); tg.expand(); } catch (_) {}
+        try { tg.setHeaderColor('#111318'); tg.setBackgroundColor('#111318'); } catch (_) {}
+      }
+    })();
+  </script>
+</body>
+</html>
