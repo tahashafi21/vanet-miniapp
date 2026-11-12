@@ -74,11 +74,8 @@
     .why-card{position:relative;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:23px;padding:18px;background:linear-gradient(145deg,#202630 0%,#181c24 78%);isolation:isolate}
     .why-software{grid-column:1/-1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:20px;min-height:218px}
     .why-card:before{content:"";position:absolute;z-index:-1;width:190px;height:190px;left:-95px;bottom:-115px;border:1px solid rgba(91,124,255,.18);border-radius:50%;box-shadow:0 0 0 18px rgba(91,124,255,.035),0 0 0 38px rgba(91,124,255,.025)}
-    .why-index{direction:ltr;text-align:right;unicode-bidi:isolate;font-size:9px;letter-spacing:1.1px;color:var(--lime);font-weight:900;margin-bottom:7px}
     .why-card h3{font-size:16px;line-height:1.55;margin:0 0 7px;font-weight:950}
     .why-card p{font-size:11px;line-height:1.95;color:#bdc3ce;margin:0}
-    .why-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}
-    .why-tags span{font-size:9px;color:#e2e6ed;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.035);padding:4px 8px;border-radius:999px}
     .dashboard-demo{background:#11161e;border:1px solid rgba(255,255,255,.1);border-radius:17px;padding:12px;box-shadow:0 14px 28px rgba(0,0,0,.22);transform:rotate(-1deg)}
                 .dash-main{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:10px 0}
     .dash-main strong{font-size:11px}
@@ -88,30 +85,12 @@
     .dash-metrics b{display:block;color:#f1f3f5;font-size:10px;margin-top:3px}
     .dash-progress{height:5px;border-radius:99px;background:#303846;margin-top:10px;overflow:hidden}
     .dash-progress span{display:block;width:68%;height:100%;background:linear-gradient(90deg,#8ea2ff,var(--lime));border-radius:99px}
-    .why-gold{grid-column:1/-1;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:18px;border:1px solid rgba(221,190,104,.7);background:linear-gradient(120deg,rgba(179,145,61,.13),rgba(30,31,29,.95) 62%);box-shadow:inset 0 0 0 1px rgba(221,190,104,.10)}
+    .why-gold{grid-column:1/-1;display:grid;grid-template-columns:1fr;align-items:center;gap:18px;border:1px solid rgba(221,190,104,.7);background:linear-gradient(120deg,rgba(179,145,61,.13),rgba(30,31,29,.95) 62%);box-shadow:inset 0 0 0 1px rgba(221,190,104,.10)}
     .why-gold:before{width:240px;height:240px;left:-120px;bottom:-145px;border-color:rgba(221,190,104,.25);box-shadow:0 0 0 18px rgba(221,190,104,.035),0 0 0 38px rgba(221,190,104,.025)}
     .gold-badge{display:inline-flex;align-items:center;gap:6px;color:#f0d58e;border:1px solid rgba(221,190,104,.48);background:rgba(221,190,104,.1);border-radius:999px;padding:4px 9px;font-size:9px;font-weight:900;margin-bottom:9px}
     .gold-badge:before{content:"✦";font-size:11px}
-    .why-gold .why-index{color:#e6c979}
     .why-gold h3{font-size:17px}
-    .why-gold .why-tags span{border-color:rgba(221,190,104,.28);color:#f0dfb6;background:rgba(221,190,104,.06)}
-    .course-path{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;align-items:stretch}
-    .course-step{min-width:0;border:1px solid rgba(221,190,104,.3);border-radius:12px;background:rgba(12,15,19,.35);padding:11px 7px;text-align:center}
-    .course-step b{display:block;color:#f0d58e;font-size:10px}
-    .course-step span{display:block;color:#c3bba4;font-size:8px;margin-top:4px;line-height:1.5}
-    .course-result{grid-column:1/-1;text-align:center;color:#e6ce91;font-size:9px;font-weight:850;padding-top:2px}
-    .why-compact{min-height:176px}
-    .compact-art{height:65px;display:flex;align-items:center;gap:8px;margin-top:12px}
-    .anon-art{position:relative;flex:1;display:flex;align-items:center;gap:8px}
-    .anon-lock{width:48px;height:48px;border-radius:15px;background:rgba(91,124,255,.14);color:#aabaff;display:grid;place-items:center;font-size:23px}
-    .anon-message{border:1px solid rgba(255,255,255,.12);background:#111720;border-radius:12px 12px 12px 3px;padding:7px 10px;color:#cbd2de;font-size:9px}
-    .anon-message small{display:block;color:var(--lime);font-size:7px}
-    .boarding-art{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}
-    .boarding-bubbles{display:flex;align-items:center}
-    .boarding-bubbles span{width:32px;height:32px;border-radius:11px;border:2px solid #1c222b;background:#303b4d;color:#d8e0ff;display:grid;place-items:center;font-size:13px;margin-left:-7px}
-    .boarding-bubbles span:nth-child(2){background:rgba(223,255,42,.16);color:var(--lime)}
-    .boarding-score{border:1px solid rgba(223,255,42,.25);background:rgba(223,255,42,.07);border-radius:10px;padding:5px 8px;color:var(--lime);font-size:8px;font-weight:800}
-    .why-compact .why-tags{margin-top:9px}
+    .why-compact{min-height:0}
     @media(min-width:620px){
       .why-section{margin-top:34px}.why-card{padding:21px}.why-software{min-height:230px}.why-heading h2{font-size:28px}
       .why-card h3{font-size:17px}.why-card p{font-size:12px}
@@ -226,36 +205,19 @@
         <article class="why-card why-gold">
           <div>
             <div class="gold-badge">ویژه طرح گلد</div>
-            <div class="why-index">02 / PERSONALIZED LEARNING</div>
             <h3>دوره‌های آموزشی شخصی‌سازی‌شده</h3>
             <p>با شناخت نقاط قوت و ضعف هر دانش‌آموز، دوره‌های سالیانه، نکته‌وتست و امتحان نهاییِ اساتید مطرح رو متناسب با نیازش انتخاب و ترکیب می‌کنیم تا به یک مسیر آموزشی بهینه و پربازده برسیم.</p>
           </div>
-          <div class="course-path" aria-label="مراحل ساخت مسیر آموزشی اختصاصی">
-            <div class="course-step"><b>شناخت</b><span>نقاط قوت و ضعف</span></div>
-            <div class="course-step"><b>انتخاب</b><span>دوره‌های مناسب</span></div>
-            <div class="course-step"><b>ترکیب</b><span>سالیانه، نکته‌وتست و نهایی</span></div>
-            <div class="course-result">مسیر آموزشی اختصاصی با همراهی مشاور</div>
-          </div>
         </article>
 
         <article class="why-card why-compact">
-          <div class="why-index">03 / ANONYMOUS BOT</div>
           <h3>ربات ناشناس وانت</h3>
           <p>سؤال، دغدغه، انتقاد یا پیشنهادت رو بدون نمایش هویتت برای تیم وانت بفرست؛ راحت‌تر و بی‌واسطه حرفت رو بزن.</p>
-          <div class="compact-art anon-art" aria-hidden="true">
-            <div class="anon-lock">♢</div>
-            <div class="anon-message"><small>پیام ناشناس</small>حرفت شنیده می‌شه.</div>
-          </div>
         </article>
 
         <article class="why-card why-compact">
-          <div class="why-index">04 / ONLINE STUDY ROOM</div>
           <h3>پانسیون آنلاین گروه آموزشی وانت</h3>
           <p>سؤال‌هات رو بپرس، از بقیه یاد بگیر و در کنار دانش‌آموزهای دیگه وارد یک رقابت سالم و انگیزه‌بخش شو.</p>
-          <div class="boarding-art" aria-hidden="true">
-            <div class="boarding-bubbles"><span>؟</span><span>✓</span><span>✦</span></div>
-            <div class="boarding-score">یادگیری + رقابت</div>
-          </div>
         </article>
       </div>
     </section>
