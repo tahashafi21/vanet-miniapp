@@ -77,10 +77,14 @@
     .why-software{grid-column:1/-1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:20px;min-height:218px}
     .why-card:before{content:"";position:absolute;z-index:-1;width:190px;height:190px;left:-95px;bottom:-115px;border:1px solid rgba(91,124,255,.18);border-radius:50%;box-shadow:0 0 0 18px rgba(91,124,255,.035),0 0 0 38px rgba(91,124,255,.025)}
     .why-card h3{font-size:16px;line-height:1.55;margin:0 0 7px;font-weight:950}
-    .feature-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:15px;padding:9px 15px;min-height:40px;border:1px solid rgba(221,190,104,.55);border-radius:12px;background:linear-gradient(135deg,#e2c579 0%,#c5a251 100%);color:#211b0e;font-size:11px;font-weight:900;text-decoration:none;box-shadow:0 5px 14px rgba(0,0,0,.18);transition:transform .15s,filter .15s}
-    .feature-link:hover{filter:brightness(1.06);transform:translateY(-1px)}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:15px;padding:9px 15px;min-height:40px;border:1px solid transparent;border-radius:12px;color:#fff;font-size:11px;font-weight:900;text-decoration:none;box-shadow:0 5px 14px rgba(0,0,0,.2);transition:transform .15s,filter .15s}
+    .feature-link:hover{filter:brightness(1.1);transform:translateY(-1px)}
     .feature-link:active{transform:scale(.98)}
-    .feature-link:focus-visible{outline:2px solid #f0d58e;outline-offset:3px}
+    .feature-link:focus-visible{outline:2px solid #f8f6ef;outline-offset:3px}
+    /* Each service button uses its own visual identity. */
+    .why-software .feature-link{background:linear-gradient(135deg,#526fe0,#354caa);border-color:rgba(142,162,255,.5);color:#fff}
+    .why-compact:nth-of-type(3) .feature-link{background:linear-gradient(135deg,#269bd6,#1677b5);border-color:rgba(115,202,255,.45);color:#fff}
+    .why-compact:nth-of-type(4) .feature-link{background:linear-gradient(135deg,#a8c92b,#718d16);border-color:rgba(223,255,42,.4);color:#171d0b}
     .why-compact .feature-link{margin-top:13px}
     .why-card p{font-size:11px;line-height:1.95;color:#bdc3ce;margin:0}
     .dashboard-demo{background:#11161e;border:1px solid rgba(255,255,255,.1);border-radius:17px;padding:12px;box-shadow:0 14px 28px rgba(0,0,0,.22);transform:rotate(-1deg)}
