@@ -77,6 +77,11 @@
     .why-software{grid-column:1/-1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:20px;min-height:218px}
     .why-card:before{content:"";position:absolute;z-index:-1;width:190px;height:190px;left:-95px;bottom:-115px;border:1px solid rgba(91,124,255,.18);border-radius:50%;box-shadow:0 0 0 18px rgba(91,124,255,.035),0 0 0 38px rgba(91,124,255,.025)}
     .why-card h3{font-size:16px;line-height:1.55;margin:0 0 7px;font-weight:950}
+    .feature-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:15px;padding:9px 15px;min-height:40px;border:1px solid rgba(221,190,104,.55);border-radius:12px;background:linear-gradient(135deg,#e2c579 0%,#c5a251 100%);color:#211b0e;font-size:11px;font-weight:900;text-decoration:none;box-shadow:0 5px 14px rgba(0,0,0,.18);transition:transform .15s,filter .15s}
+    .feature-link:hover{filter:brightness(1.06);transform:translateY(-1px)}
+    .feature-link:active{transform:scale(.98)}
+    .feature-link:focus-visible{outline:2px solid #f0d58e;outline-offset:3px}
+    .why-compact .feature-link{margin-top:13px}
     .why-card p{font-size:11px;line-height:1.95;color:#bdc3ce;margin:0}
     .dashboard-demo{background:#11161e;border:1px solid rgba(255,255,255,.1);border-radius:17px;padding:12px;box-shadow:0 14px 28px rgba(0,0,0,.22);transform:rotate(-1deg)}
                 .dash-main{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:10px 0}
@@ -190,6 +195,7 @@
           <div>
             <h3>نرم‌افزار گزارش کار وانت</h3>
             <p>گزارش روزانه فقط به ساعت مطالعه و تعداد تست محدود نیست. ساعت بیداری و حال‌وهوای دانش‌آموز هم ثبت می‌شه تا مشاور تصویر کامل‌تری از شرایط و روند روزانه‌اش داشته باشه.</p>
+            <a class="feature-link" href="https://app.vanet.work.gd" target="_blank" rel="noopener noreferrer">ورود به نرم‌افزار گزارش کار <span aria-hidden="true">↗</span></a>
           </div>
           <div class="dashboard-demo" role="img" aria-label="نمای نمونه‌ای از گزارش روزانه نرم‌افزار وانت">
             <div class="dash-main"><strong>بررسی وضعیت</strong></div>
@@ -214,11 +220,13 @@
         <article class="why-card why-compact">
           <h3>ربات ناشناس وانت</h3>
           <p>سؤال، دغدغه، انتقاد یا پیشنهادت رو بدون نمایش هویتت برای تیم وانت بفرست؛ راحت‌تر و بی‌واسطه حرفت رو بزن.</p>
+          <a class="feature-link" href="https://t.me/VanetGroupBot" target="_blank" rel="noopener noreferrer">ارسال پیام ناشناس <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="why-card why-compact">
           <h3>پانسیون آنلاین گروه آموزشی وانت</h3>
           <p>سؤال‌هات رو بپرس، از بقیه یاد بگیر و در کنار دانش‌آموزهای دیگه وارد یک رقابت سالم و انگیزه‌بخش شو.</p>
+          <a class="feature-link" href="https://t.me/+rdG7_XgxA_oxOTc0" target="_blank" rel="noopener noreferrer">ورود به پانسیون آنلاین <span aria-hidden="true">↗</span></a>
         </article>
       </div>
     </section>
