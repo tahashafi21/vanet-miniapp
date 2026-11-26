@@ -161,8 +161,8 @@
     </div>
 
     <div class="sale-banner" id="black-friday-banner" role="status">
-      <strong>BLACK FRIDAY · ۲۰٪ تخفیف</strong>
-      <span>فقط جمعه ۶ آذر ۱۴۰۵ · فرصت ثبت‌نام با قیمت ویژه</span>
+      <strong>BLACK FRIDAY · ۵۰٪ تخفیف</strong>
+      <span>تخفیف ویژه از همین حالا برای هر دو طرح فعال است</span>
     </div>
 
     <section class="plans" id="plans-anchor" aria-label="طرح‌های مشاوره‌ای">
@@ -170,7 +170,7 @@
         <div class="plan-top"><div class="plan-name">Silver</div><div class="plan-icon">↗</div></div>
         <div class="price-label">هزینه ماهانه طرح</div>
         <div class="price" id="silver-regular-price">۱٬۵۰۰٬۰۰۰ <small>تومان</small></div>
-        <div class="sale-prices" id="silver-sale-price"><span class="sale-old">۱٬۵۰۰٬۰۰۰ تومان</span><span class="sale-new">۱٬۲۰۰٬۰۰۰ تومان</span><span class="sale-percent">۲۰٪ تخفیف</span></div>
+        <div class="sale-prices" id="silver-sale-price"><span class="sale-old">۱٬۵۰۰٬۰۰۰ تومان</span><span class="sale-new">۷۵۰٬۰۰۰ تومان</span><span class="sale-percent">۵۰٪ تخفیف</span></div>
         <p class="plan-desc">برای دانش‌آموزی که به برنامه منظم و پیگیری واقعی نیاز داره.</p>
         <ul class="feature-list">
           <li><span class="check">✓</span><span>مشاوره فردی</span></li>
@@ -185,7 +185,7 @@
         <div class="plan-top"><div class="plan-name">Gold</div><div class="plan-icon">✦</div></div>
         <div class="price-label">هزینه ماهانه طرح</div>
         <div class="price" id="gold-regular-price">۲٬۰۰۰٬۰۰۰ <small>تومان</small></div>
-        <div class="sale-prices" id="gold-sale-price"><span class="sale-old">۲٬۰۰۰٬۰۰۰ تومان</span><span class="sale-new">۱٬۶۰۰٬۰۰۰ تومان</span><span class="sale-percent">۲۰٪ تخفیف</span></div>
+        <div class="sale-prices" id="gold-sale-price"><span class="sale-old">۲٬۰۰۰٬۰۰۰ تومان</span><span class="sale-new">۱٬۰۰۰٬۰۰۰ تومان</span><span class="sale-percent">۵۰٪ تخفیف</span></div>
         <p class="plan-desc">دسترسی به محتوای اختصاصی وانت.</p>
         <ul class="feature-list">
           <li><span class="check">✓</span><span>تمام خدمات طرح سیلور</span></li>
@@ -270,19 +270,16 @@
   <script>
     (() => {
       'use strict';
-      // Black Friday offer is valid only on Friday, 27 Nov 2026 (Tehran time).
-      const tehranDate = new Intl.DateTimeFormat('en-CA', {
-        timeZone: 'Asia/Tehran', year: 'numeric', month: '2-digit', day: '2-digit'
-      }).format(new Date());
-      const blackFridayActive = tehranDate === '2026-11-27';
+      // Black Friday discount is active immediately and remains enabled.
+      const blackFridayActive = true;
       const plans = {
         silver: {
           label: 'سیلور',
-          price: blackFridayActive ? '۱٬۲۰۰٬۰۰۰ تومان در ماه (با ۲۰٪ تخفیف بلک فرایدی)' : '۱٬۵۰۰٬۰۰۰ تومان در ماه'
+          price: blackFridayActive ? '۷۵۰٬۰۰۰ تومان در ماه (با ۵۰٪ تخفیف بلک فرایدی)' : '۱٬۵۰۰٬۰۰۰ تومان در ماه'
         },
         gold: {
           label: 'گلد',
-          price: blackFridayActive ? '۱٬۶۰۰٬۰۰۰ تومان در ماه (با ۲۰٪ تخفیف بلک فرایدی)' : '۲٬۰۰۰٬۰۰۰ تومان در ماه'
+          price: blackFridayActive ? '۱٬۰۰۰٬۰۰۰ تومان در ماه (با ۵۰٪ تخفیف بلک فرایدی)' : '۲٬۰۰۰٬۰۰۰ تومان در ماه'
         }
       };
       if (blackFridayActive) {
