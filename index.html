@@ -59,6 +59,15 @@
     .gold .plan-icon{background:var(--gold);color:#211b0e}
     .price-label{font-size:10px;color:var(--muted);margin-top:2px}
     .price{font-size:clamp(18px,4.7vw,25px);font-weight:950;white-space:nowrap;letter-spacing:-.5px;line-height:1.5;margin:1px 0 2px}
+    .sale-banner{display:none;margin:0 0 14px;padding:12px 15px;border:1px solid rgba(255,77,77,.45);border-radius:16px;background:linear-gradient(110deg,rgba(255,77,77,.16),rgba(221,190,104,.10));text-align:center}
+    .sale-banner.is-active{display:block}
+    .sale-banner strong{display:block;color:#ff7777;font-size:17px;font-weight:950}
+    .sale-banner span{display:block;color:#e4d8c9;font-size:11px;margin-top:2px}
+    .sale-prices{display:none;align-items:center;gap:7px;flex-wrap:wrap}
+    .sale-prices.is-active{display:flex}
+    .sale-old{font-size:11px;color:#a9afba;text-decoration:line-through}
+    .sale-new{font-size:clamp(18px,4.7vw,25px);font-weight:950;color:#ff7777;white-space:nowrap}
+    .sale-percent{font-size:10px;font-weight:900;color:#111318;background:#ff7777;border-radius:7px;padding:2px 6px}
     .price small{font-size:11px;font-weight:700;color:#d0d4dc}
     .plan-desc{font-size:11px;color:#d2d6de;margin:0 0 12px;min-height:48px}
     .feature-list{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:8px}
@@ -151,11 +160,17 @@
       <span>هزینه‌ها به‌صورت ماهانه</span>
     </div>
 
+    <div class="sale-banner" id="black-friday-banner" role="status">
+      <strong>BLACK FRIDAY · ۲۰٪ تخفیف</strong>
+      <span>فقط جمعه ۶ آذر ۱۴۰۵ · فرصت ثبت‌نام با قیمت ویژه</span>
+    </div>
+
     <section class="plans" id="plans-anchor" aria-label="طرح‌های مشاوره‌ای">
       <article class="plan" id="silver-card">
         <div class="plan-top"><div class="plan-name">Silver</div><div class="plan-icon">↗</div></div>
         <div class="price-label">هزینه ماهانه طرح</div>
-        <div class="price">۱٬۵۰۰٬۰۰۰ <small>تومان</small></div>
+        <div class="price" id="silver-regular-price">۱٬۵۰۰٬۰۰۰ <small>تومان</small></div>
+        <div class="sale-prices" id="silver-sale-price"><span class="sale-old">۱٬۵۰۰٬۰۰۰ تومان</span><span class="sale-new">۱٬۲۰۰٬۰۰۰ تومان</span><span class="sale-percent">۲۰٪ تخفیف</span></div>
         <p class="plan-desc">برای دانش‌آموزی که به برنامه منظم و پیگیری واقعی نیاز داره.</p>
         <ul class="feature-list">
           <li><span class="check">✓</span><span>مشاوره فردی</span></li>
@@ -169,7 +184,8 @@
       <article class="plan gold" id="gold-card">
         <div class="plan-top"><div class="plan-name">Gold</div><div class="plan-icon">✦</div></div>
         <div class="price-label">هزینه ماهانه طرح</div>
-        <div class="price">۲٬۰۰۰٬۰۰۰ <small>تومان</small></div>
+        <div class="price" id="gold-regular-price">۲٬۰۰۰٬۰۰۰ <small>تومان</small></div>
+        <div class="sale-prices" id="gold-sale-price"><span class="sale-old">۲٬۰۰۰٬۰۰۰ تومان</span><span class="sale-new">۱٬۶۰۰٬۰۰۰ تومان</span><span class="sale-percent">۲۰٪ تخفیف</span></div>
         <p class="plan-desc">دسترسی به محتوای اختصاصی وانت.</p>
         <ul class="feature-list">
           <li><span class="check">✓</span><span>تمام خدمات طرح سیلور</span></li>
@@ -257,13 +273,25 @@
       const plans = {
         silver: {
           label: 'سیلور',
-          price: '۱٬۵۰۰٬۰۰۰ تومان در ماه'
+          price: blackFridayActive ? '۱٬۲۰۰٬۰۰۰ تومان در ماه (با ۲۰٪ تخفیف بلک فرایدی)' : '۱٬۵۰۰٬۰۰۰ تومان در ماه'
         },
         gold: {
           label: 'گلد',
-          price: '۲٬۰۰۰٬۰۰۰ تومان در ماه'
+          price: blackFridayActive ? '۱٬۶۰۰٬۰۰۰ تومان در ماه (با ۲۰٪ تخفیف بلک فرایدی)' : '۲٬۰۰۰٬۰۰۰ تومان در ماه'
         }
       };
+      // Black Friday offer is valid only on Friday, 27 Nov 2026 (Tehran time).
+      const tehranDate = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Tehran', year: 'numeric', month: '2-digit', day: '2-digit'
+      }).format(new Date());
+      const blackFridayActive = tehranDate === '2026-11-27';
+      if (blackFridayActive) {
+        document.getElementById('black-friday-banner').classList.add('is-active');
+        document.getElementById('silver-regular-price').style.display = 'none';
+        document.getElementById('gold-regular-price').style.display = 'none';
+        document.getElementById('silver-sale-price').classList.add('is-active');
+        document.getElementById('gold-sale-price').classList.add('is-active');
+      }
       const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
       const modal = document.getElementById('modal-backdrop');
       let selected = 'gold';
