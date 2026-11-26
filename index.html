@@ -270,6 +270,11 @@
   <script>
     (() => {
       'use strict';
+      // Black Friday offer is valid only on Friday, 27 Nov 2026 (Tehran time).
+      const tehranDate = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Tehran', year: 'numeric', month: '2-digit', day: '2-digit'
+      }).format(new Date());
+      const blackFridayActive = tehranDate === '2026-11-27';
       const plans = {
         silver: {
           label: 'سیلور',
@@ -280,11 +285,6 @@
           price: blackFridayActive ? '۱٬۶۰۰٬۰۰۰ تومان در ماه (با ۲۰٪ تخفیف بلک فرایدی)' : '۲٬۰۰۰٬۰۰۰ تومان در ماه'
         }
       };
-      // Black Friday offer is valid only on Friday, 27 Nov 2026 (Tehran time).
-      const tehranDate = new Intl.DateTimeFormat('en-CA', {
-        timeZone: 'Asia/Tehran', year: 'numeric', month: '2-digit', day: '2-digit'
-      }).format(new Date());
-      const blackFridayActive = tehranDate === '2026-11-27';
       if (blackFridayActive) {
         document.getElementById('black-friday-banner').classList.add('is-active');
         document.getElementById('silver-regular-price').style.display = 'none';
